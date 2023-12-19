@@ -1,0 +1,608 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@100;300;400&family=Work+Sans:wght@200&display=swap');
+
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Work Sans', sans-serif;
+ */
+
+ *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: white;
+}
+
+.desktop-main-menu ul li a {
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+ul {
+    list-style: none;
+}
+
+/* logo / Navbar  */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    height: 160px;
+    padding: 0 33px;
+}
+
+
+/* logo */  /* is the container within which the image  resides  */
+
+.logo {
+     width: 220px;
+      height: auto;
+      z-index: 5;
+}
+
+/* logo image */
+
+.logo img {
+    display: block;
+    width: 220px;
+    height: auto;
+}
+
+/*Desktop menu */
+
+.desktop-main-menu  {
+    margin-right: 45px;
+
+}
+
+.desktop-main-menu ul {
+    display: flex;
+    
+}
+
+.desktop-main-menu ul li {
+    position: relative;
+    margin-right: 15px;
+    padding-bottom: 3px;
+}
+
+
+/*  menu item bottom border */
+.desktop-main-menu ul li a::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     background: #f2f2f2;
+     transform: scaleX(0);
+     transition: transform 0.6s cubic-bezier(0.42,0.1,1.0,1,0);
+     transform-origin: right center ;
+}
+
+.desktop-main-menu  ul li a:hover::after {
+     transform: scaleX(1);
+     transform-origin: left center;
+     transition-duration: 0.5s;
+}
+
+
+
+
+
+
+/* Hamburger menu*/
+.hamburger {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    z-index: 9;
+    cursor: pointer;
+    
+}
+
+.hamburger-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 2px;
+    background: #f2f2f2;
+    transition: 0.7s;
+}
+
+.hamburger-middle {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 25px;
+    height: 2px;
+    background: #f2f2f2;
+    transition: 0.6s;
+}
+
+.hamburger-bottom {
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 25px;
+    height: 2px;
+    background: #f2f2f2;
+    transition: 0.7s;
+   
+}
+
+/* transition hamburger to X when open */
+
+.open {
+    transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+    transform: rotate(43deg) translateY(7px) translateX(6.4px);
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) ;
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+
+/* overlay */
+.overlay-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 3;
+}
+
+/* stop scrolling */
+
+.stop-scrolling {
+    overflow: hidden;
+}
+
+/* hide mobile main menu items */
+
+.mobile-only {
+    display: none;
+}
+ 
+/* mobile menu */
+
+.mobile-main-menu {
+     position: fixed;
+     top: 0;
+     right: 0;
+     width: 300px;
+     height: 100%;
+     z-index: 4;
+     background: #000;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-transform: uppercase;
+     transform: translateX(100%);
+     transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    
+
+}
+
+/* bring menu from the right */
+.show-menu {
+    transform: translateX(0);
+}
+
+
+
+.mobile-main-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 40px;
+    
+    
+}
+
+.mobile-main-menu ul li {
+     margin-bottom: 20px;
+     font-size: 16px;
+      /* border-bottom: 1px solid #f3f3f3; */
+      width: 100%;
+      text-align: right;
+      padding-bottom: 3px;
+}
+
+.mobile-main-menu ul li a {
+    color: white;
+    text-decoration: none;
+    
+} 
+
+.mobile-main-menu ul li a:hover {
+    color: skyblue;
+    cursor: pointer;
+    border-bottom: 1px solid skyblue;
+    transition: color 1.5s;
+    
+}
+
+
+
+
+/* Sections  */
+
+section {
+    position: relative;
+     height: 100vh;  /* to take the entire height of the page */
+     background-repeat: no-repeat;
+     background-position: center center; /* center center for both the x and y axes */
+     background-size:  cover;
+     text-transform: uppercase;
+}
+
+
+/*  Background images  */
+
+.section-a {
+    background-image: url(../img/section-a.webp);
+}
+.section-b {
+    background-image: url(../img/section-b.webp);
+}
+.section-c {
+    background-image: url(../img/section-c.webp);
+}
+.section-d {
+    background-image: url(../img/section-d.webp);
+}
+.section-e {
+    background-image: url(../img/section-e.webp);
+}
+.section-f {
+    background-image: url(../img/section-f.webp);
+}
+
+/* Inner Pages */
+
+.bg-falcon-9 {
+    background-image: url('../img/falcon-9.webp');
+}
+.bg-falcon-heavy {
+    background-image: url('../img/falcon-heavy.webp');
+}
+.bg-dragon {
+    background-image: url('../img/dragon.webp');
+}
+
+
+.section-inner {
+    position: absolute;
+    bottom: 180px;
+    left: 10rem;
+    max-width: 560px;
+}
+
+/* section-inner h4*/
+
+.section-inner h4 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 200;
+    animation: fadeInDown 0.5s ease-in-out;
+   
+}
+
+/* .section-inner h2*/
+
+.section-inner h2 {
+     font-size: 2.7rem;
+     font-weight: 800;
+     margin-bottom: 15px;
+     animation: fadeInDown 0.5s ease-in-out 0.2s;
+     animation-fill-mode: both; 
+}
+
+.section-inner a {
+    animation: fadeInDown 0.5s ease-in-out 0.4s;
+    text-decoration: none;
+    color: #f2f2f2;
+    animation-fill-mode: both;
+
+}
+
+/* Inner Pages  */
+
+.bg-falcon-9 {
+    background-image: url(../img/falcon-9.webp);
+}
+
+.section-animate {
+   animation: fadeInDown 0.5s ease-in-out;
+}
+
+.section-inner-center {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     text-transform: uppercase;
+     text-align: center;
+     width: 100%;
+}
+
+
+.section-inner-center h3 {
+    font-size: 100px;
+    margin-bottom: 12px;
+   animation: fadeInDown 1s ease-in-out;
+}
+
+.section-inner-center p {
+     font-size: 22px;
+     animation: fadeInDown 2s ease-in-out 1s;
+     animation-fill-mode: both;
+}
+
+
+/* stats */
+.stats {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.stats .counter {
+    font-size: 160px;
+}
+
+.stats h4 {
+    font-size: 30px;
+}
+
+
+
+/* .btn */
+
+.btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    min-width: 140px;
+    padding: 15px 40px;
+    margin-top: 12px;
+    border: 1px solid white;
+    font-weight: 700;
+    overflow: hidden;
+    z-index: 2 ;
+    border-radius: 16px;
+    
+    
+}
+
+.btn:hover span {
+    color: #111;
+}
+
+.btn .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    
+}
+
+.btn:hover .hover{
+  transform: translateY(0);
+
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 60px;
+    left: 49.2%;
+     animation: animationArrow 4s ease-in;
+     animation-iteration-count: infinite;
+     transform: translate(-50% -50%);
+    
+}
+
+footer {
+    position: relative;
+    padding: 50px 0;
+}
+
+footer ul  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+footer ul li {
+    margin-right: 15px;
+    color: #444;
+    text-transform: uppercase; 
+    font-size: 15px;  
+    line-height: 2.3;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    transition: color 0.5s;
+    
+}
+
+footer ul li a:hover {
+    color: coral;
+    animation: footerLinks 0.5s ease-in;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+     opacity: 0;  /* opaqueness is 0 and so we see nothing due to full transparency  */
+     transform: translateY(-130px);
+    }
+
+    100% {
+       opacity: 1; /* there is full opaqueness and hence the content in the background is visible  */  
+       transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn  {
+    0%{
+        opacity: 0;
+       
+    }
+
+    100% {
+        opacity: 1;
+       
+    }
+}
+
+
+
+/* for the bouncing effect of the arrow */
+@keyframes animationArrow {
+    0%,20%,50%,80%,100% {
+        opacity: 1;
+    transform: translateY(20px);
+    }
+
+    45% {
+        opacity: 0.1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes footerLinks {
+    0% {
+        opacity: 1;
+        transform: translateY(-120px);
+    }
+
+    100% {
+        opacity: 0.1;
+        transform: translateY(0);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+/* media queries */
+
+@media(max-width: 960px) {
+    /* here we hide the desktop menu */
+
+    .desktop-main-menu {
+        display: none;
+    }
+
+    /* show main mobile items  */
+
+    .mobile-only {
+        display: block;
+    }
+
+    .section-inner-center h3 {
+        font-size: 75px;
+    }
+
+    
+}
+
+
+@media(max-width: 600px) {
+     .section-inner {
+       bottom: 150px;
+        left: 20px;
+        
+     }
+
+     .section-inner h4{
+        font-size: 30px;
+     }
+
+     .section-inner h2{
+        font-size: 40px;
+     }
+
+     footer ul li:nth-child(1){
+          position: absolute;
+          top: 30px;
+          left: 50%;
+          transform: translate(-50%,-50%);
+         
+          
+     }
+
+     footer ul li {
+        margin-right: 15px;
+     }
+     .logo {
+      position: absolute;
+      left: 25%;
+     }
+
+     .section-inner-center h3 {
+        font-size: 45px;
+    }
+   /*stats */
+
+   .stats {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .stats div {
+     margin-bottom: 15px;
+   }
+    
+}
